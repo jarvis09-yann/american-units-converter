@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>American units converter</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <h1>American Units converter</h1>
+
+    <div class="converter-container">
+      <div class="field-container">
+        <p>Metric</p>
+        <input type="number" />
+        <select name="units" id="units-select">
+          <option value="centimeter">centimeter</option>
+          <option value="meter">meter</option>
+          <option value="kilometer">kilometer</option>
+          <option value="break" id="unit-break" disabled="disabled">---</option>
+          <option value="gram">gram</option>
+          <option value="gram">kilogram</option>
+          <option value="gram">ton</option>
+          <option value="break" id="unit-break" disabled="disabled">---</option>
+          <option value="liter">liter</option>
+          <option value="centiliter">centiliter</option>
+          <option value="milliliter">milliliter</option>
+        </select>
+      </div>
+      <div class="swap-container">
+        <button id="swap">swap</button>
+      </div>
+      <div class="field-container">
+        <p>Freedom units</p>
+        <input type="text" />
+        <select name="units" id="units-select">
+          <option>Freedom units</option>
+        </select>
+      </div>
+    </div>
+
+    <script src="app.js" async defer></script>
+  </body>
+</html>
