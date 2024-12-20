@@ -8,9 +8,12 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>American units converter</title>
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="convert your disgusting metric units to shiny units americans can understand "
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -19,38 +22,57 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <h1>American Units converter</h1>
 
-    <div class="converter-container">
-      <div class="field-container">
-        <p>Metric</p>
-        <input type="number" />
-        <select name="units" id="units-select">
-          <option value="centimeter">centimeter</option>
-          <option value="meter">meter</option>
-          <option value="kilometer">kilometer</option>
-          <option value="break" id="unit-break" disabled="disabled">---</option>
-          <option value="gram">gram</option>
-          <option value="gram">kilogram</option>
-          <option value="gram">ton</option>
-          <option value="break" id="unit-break" disabled="disabled">---</option>
-          <option value="liter">liter</option>
-          <option value="centiliter">centiliter</option>
-          <option value="milliliter">milliliter</option>
-        </select>
+    <section>
+      <h1>American Units Converter</h1>
+      <div class="converter-container">
+        <div class="inputs-container">
+          <div class="input">
+            <p>Metric</p>
+            <input type="number" min="0" id="metric-input" />
+            <select name="units" id="metric-units-select">
+              <option value="break" class="unit-break" disabled="disabled">
+                ------ Lenghts ------
+              </option>
+              <option value="centimeter">Centimeter</option>
+              <option selected="selected" value="meter">Meter</option>
+              <option value="kilometer">Kilometer</option>
+              <option value="break" class="unit-break" disabled="disabled">
+                ------ Weights ------
+              </option>
+              <option value="gram">Gram</option>
+              <option value="gram">Kilogram</option>
+              <option value="gram">Ton</option>
+              <option value="break" class="unit-break" disabled="disabled">
+                ------ Volumes ------
+              </option>
+              <option value="liter">Liter</option>
+              <option value="centiliter">Centiliter</option>
+              <option value="milliliter">Milliliter</option>
+            </select>
+          </div>
+          <div class="input">
+            <button id="swap">⇆</button>
+          </div>
+          <div class="input">
+            <div class="freedom-units-title-container">
+              <p>Freedom units</p>
+              <p id="copy-message">Copied!</p>
+            </div>
+            <input type="text" id="freedom-input" readonly />
+            <select name="units" id="freedomunits-select">
+              <option>Freedom units</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div class="swap-container">
-        <button id="swap">swap</button>
-      </div>
-      <div class="field-container">
-        <p>Freedom units</p>
-        <input type="text" />
-        <select name="units" id="units-select">
-          <option>Freedom units</option>
-        </select>
-      </div>
-    </div>
-
+    </section>
+    <footer>
+      <p>
+        <a href="TODO:fill me up">Github repo</a> -
+        <a href="./about.html">about</a> -
+      </p>
+    </footer>
     <script src="app.js" async defer></script>
   </body>
 </html>

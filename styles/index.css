@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--c-text);
+}
+
+:root {
+  --c-bg: #1c1c1c;
+  --c-light: #282828;
+  --c-lighter: #333333;
+  --c-border: #666666;
+  --c-text-accent: #cccccc;
+  --c-text: #eeeeee;
+}
+
+/* https://stackoverflow.com/questions/3397113/how-to-remove-focus-border-outline-around-text-input-boxes-chrome */
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--c-text);
+  background-color: var(--c-bg);
+  height: 100vh;
+  width: 100vw;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+section {
+  height: calc(100vh - 32px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer {
+  height: 32px;
+  background-color: var(--c-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.input p {
+  font-size: 24px;
+  font-weight: 600;
+  width: 300px;
+}
+
+.converter-container {
+  background-color: var(--c-lighter);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.inputs-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 20px;
+}
+
+.input {
+  display: inline;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input,
+select,
+#swap {
+  border-radius: 7px;
+  border: 1px solid var(--c-border);
+  background-color: var(--c-light);
+}
+
+input {
+  font-size: 24px;
+  padding: 5px 10px;
+}
+
+input:focus {
+  border: 1px solid var(--c-text-accent);
+}
+
+select,
+#swap {
+  font-size: 18px;
+  padding: 5px 10px;
+  background-color: inherit;
+}
+
+/* https://stackoverflow.com/questions/65120873/how-to-add-padding-to-the-default-arrow-in-a-select-dropdown-list */
+select {
+  border: none;
+  outline: 1px solid var(--c-border);
+  border-right: 16px solid transparent;
+}
+
+#swap {
+  cursor: pointer;
+}
+
+#swap:hover,
+input:hover {
+  transition: 0.3s;
+  filter: brightness(1.5);
+}
+
+option {
+  background-color: var(--c-lighter);
+  color: var(--c-text-accent);
+}
+
+option.unit-break {
+  color: rgba(var(--c-text), 0.2);
+}
+
+/* https://stackoverflow.com/questions/28320349/input-type-number-hide-arrows-from-right-part-of-input */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+.freedom-units-title-container {
+  display: flex;
+  align-items: space-between;
+  width: 300px;
+  text-wrap: nowrap;
+}
+
+.freedom-units-title-container p {
+  width: auto;
+}
+
+#copy-message {
+  color: var(--c-text-accent);
+  margin-left: auto;
+  text-align: right;
+  transition: 0.5s;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
