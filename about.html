@@ -22,6 +22,8 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
+    <video src="https://cdn.jarvis09.com/u/uDHgwk.mp4"></video>
+
     <section>
       <h1>About American Units Converter</h1>
       <p>
@@ -39,11 +41,53 @@
         <a href="https://umami.is">umami</a>, a privacy respecting FOSS
         alternative to google analytics)
       </p>
+      <p style="opacity: 0.03">
+        ↑ ↑ ↓ ↓ ← → ← → B A freedom kilometer metric imperial
+      </p>
     </section>
     <footer>
       <p>
         <a href="./index.html">Go back</a>
       </p>
     </footer>
+    <script>
+      const video = document.querySelector("video");
+      let lastTenKeys = [];
+      window.addEventListener("keydown", (e) => {
+        lastTenKeys.push(e.key);
+        if (lastTenKeys.length > 10) {
+          lastTenKeys.shift();
+        }
+        if (
+          lastTenKeys
+            .join("")
+            .toLowerCase()
+            .includes(
+              "arrowuparrowuparrowdownarrowdownarrowleftarrowrightarrowleftarrowrightba"
+            )
+        ) {
+          playVideo("https://cdn.jarvis09.com/u/uDHgwk.mp4");
+        } else if (
+          lastTenKeys.join("").toLowerCase().includes("freedom") ||
+          lastTenKeys.join("").toLowerCase().includes("kilometer") ||
+          lastTenKeys.join("").toLowerCase().includes("metric") ||
+          lastTenKeys.join("").toLowerCase().includes("imperial")
+        ) {
+          playVideo("https://cdn.jarvis09.com/u/mmB7mg.mp4");
+        }
+      });
+
+      function playVideo(url) {
+        video.style.display = "block";
+        video.src = url;
+        video.load();
+        video.play();
+        setTimeout(() => {
+          video.style.display = "none";
+          video.pause();
+          video.currentTime = 0;
+        }, 5000);
+      }
+    </script>
   </body>
 </html>

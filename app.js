@@ -4,6 +4,8 @@ const swap = document.querySelector("#swap");
 const metricField = document.querySelector("#metric-input");
 const freedomField = document.querySelector("#freedom-input");
 const copyMessage = document.querySelector("#copy-message");
+const video = document.querySelector("video");
+let lastTenKeys = [];
 let currentMetricUnit = "meter";
 let currentMetricType = "distance";
 let freedomValue = "";
@@ -101,6 +103,42 @@ swap.addEventListener("click", () => {
   metricField.value = freedomValue;
   handleMetricInput();
 });
+
+window.addEventListener("keydown", (e) => {
+  lastTenKeys.push(e.key);
+  if (lastTenKeys.length > 10) {
+    lastTenKeys.shift();
+  }
+  if (
+    lastTenKeys
+      .join("")
+      .toLowerCase()
+      .includes(
+        "arrowuparrowuparrowdownarrowdownarrowleftarrowrightarrowleftarrowrightba"
+      )
+  ) {
+    playVideo("https://cdn.jarvis09.com/u/uDHgwk.mp4");
+  } else if (
+    lastTenKeys.join("").toLowerCase().includes("freedom") ||
+    lastTenKeys.join("").toLowerCase().includes("kilometer") ||
+    lastTenKeys.join("").toLowerCase().includes("metric") ||
+    lastTenKeys.join("").toLowerCase().includes("imperial")
+  ) {
+    playVideo("https://cdn.jarvis09.com/u/mmB7mg.mp4");
+  }
+});
+
+function playVideo(url) {
+  video.style.display = "block";
+  video.src = url;
+  video.load();
+  video.play();
+  setTimeout(() => {
+    video.style.display = "none";
+    video.pause();
+    video.currentTime = 0;
+  }, 5000);
+}
 
 freedomField.addEventListener("click", () => {
   if (freedomField.value != "") {
