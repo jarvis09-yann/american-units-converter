@@ -85,6 +85,15 @@ metricSelect.addEventListener("change", () => {
 });
 
 metricField.addEventListener("input", () => {
+  if (
+    metricField.value == "69420" ||
+    metricField.value == "420" ||
+    metricField.value == "69"
+  ) {
+    freedomField.value = "oh come on...                             nice";
+    freedomValue = "";
+    return;
+  }
   handleMetricInput();
 });
 
